@@ -1,12 +1,19 @@
-# CarND-Controls-PID
-Self-Driving Car Engineer Nanodegree Program
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+# Udacity Self-Driving Car Engineer Nanodegree
+# Project: PID Controller
 
 ## Description of P, I and D component in the implementation
 The P component in this implementation is used to associate the steering angle (the control authority in this case) with respect to the cross track error (CTE). In theory it will gradually reduce the CTE to zero, however due to the effect of vehicle dynamics, the vehicle will tend to cross the center line of the lane under a P controller and result into a undesired oscillation (overshoot) of vehicle trajectory. This effect is demonstrated in this video. 
 
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/--NLQ9fG4gA/0.jpg)](https://youtu.be/Mb98TbV5mGs?t=6s)
+
 The D component in this implementation is used to associate the rate of change of CTE with respect to the steering angle. It take consideration of the rate of change of CTE as vehicle corrects its position to counter the tendency of overshoot. The effect of implementing of D component is that as the vehicle graduately approaches to the center of the lane, the rate change of CTE becomes smaller, and then the steering angle becomes smaller or even to be in the opposite direction to counter the tendency of the overshoot of vehicle position. This effect is demonstrated in this video, as the D component is included in the controller, the entire trajectory of vehicle becomes much smoother compared to that of P cotroller. 
 
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/--NLQ9fG4gA/0.jpg)](https://youtu.be/--NLQ9fG4gA "Autonomous car with P control only")
+
 The I component in this implementation is used to correct any bias of vehicle position with respect to the center of the lane. It associates the accumulated CTe with respect to the steering angle. The net effect is that the a small (the magnitude depends on the assgined gain) steering angle will be assigned to gradually correct the bias of vehicle position with respect to the center. In this particular cases, since there are many alternative left and right turns occured within the track, the bias of vehicle position is not really accumulated since it is corrected largely by the P and D components during the alternative turning process. That said, one can still observe a slight bias due to the remove of I component in the second video, compared to the demo video taken with PID controller implemented. 
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/--NLQ9fG4gA/0.jpg)](https://youtu.be/--NLQ9fG4gA "Autonomous car with P control only")
 
 ## Description of tuning process of PID controller
 
