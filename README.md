@@ -19,7 +19,7 @@ The I component in this implementation is used to correct any bias of vehicle po
 
 Demo of PID controller
 
-[![IMAGE ALT TEXT](https://i.ytimg.com/vi/kvne10xp5MY/hqdefault.jpg)](https://youtu.be/kvne10xp5MY)
+[![IMAGE ALT TEXT](https://i.ytimg.com/vi/kvne10xp5MY/hqdefault.jpg)](https://youtu.be/kvne10xp5MY?t=7s)
 
 ## Description of tuning process of PID controller
 
